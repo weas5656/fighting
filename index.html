@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Button Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .result-page {
+            text-align: center;
+        }
+
+        .result-page img {
+            max-width: 100%;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .result-page h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .result-page p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+        .back-btn {
+            background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+            margin-top: 30px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .btn {
+                font-size: 15px;
+                padding: 12px 24px;
+            }
+
+            .result-page h2 {
+                font-size: 18px;
+            }
+
+            .result-page p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- หน้าแรก -->
+        <div id="mainPage">
+            <h1>วันนี้เหนื่อยมั้ยค้าบบบ</h1>
+            <img src="12.png" style="width: 200px; height: 200px; margin-top: -20px;" alt="">
+            <br>
+            <button id="nextBtn" class="btn">Next</button>
+        </div>
+
+        <!-- หน้าผลลัพธ์ -->
+        <div id="resultPage" class="hidden">
+            <div class="result-page">
+                <img src="887.jpg" style="width: 300px; height: 350px;" alt="ภาพให้กำลังใจ">
+                <h2> ✌ถึงจะเหนื่อย🤘</h2>
+                <p>แต่ไม่เป็นไรนะค้าบบ สู้ๆ วันนี้อ้วนๆเก่งมากๆ พรุ้งนี้ได้พักผ่อนแล้ว
+                    <br>ก็พักผ่อนเยอะๆนะค้าบบ เค้าเป็นกำลังใจให้อ้วนๆนะค้าบบ ❤</p>
+                <p>❤ กอดๆนะค้าบบอ้วนน ❤</p>
+                <button id="backBtn" class="btn back-btn">กลับหน้าแรก</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const nextBtn = document.getElementById('nextBtn');
+        const backBtn = document.getElementById('backBtn');
+        const mainPage = document.getElementById('mainPage');
+        const resultPage = document.getElementById('resultPage');
+
+        nextBtn.addEventListener('click', function () {
+            mainPage.classList.add('hidden');
+            resultPage.classList.remove('hidden');
+        });
+
+        backBtn.addEventListener('click', function () {
+            resultPage.classList.add('hidden');
+            mainPage.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
